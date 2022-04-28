@@ -7,6 +7,7 @@ package database;
 import database.MySQLConnection;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.SQLOutput;
 import java.sql.ResultSet;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -42,13 +43,15 @@ public class Operations {
         return false;
     }
     public static void addAccount(String firstname, String lastname, String username, String password, String usertype, JFrame frame){
+        // need to have something which gets the uid of the last person in the users table
+        // and add one which will be the uid of the new account
         try{
             Connection myConn = MySQLConnection.getConnection();
             String query = "INSERT INTO studentManagementSystem.users "
                     + "(uid, username, password, usertype, firstname, lastname)"
                     + "VALUES (001, '"+username+"', '"+password+"', '"+usertype+"', '"+firstname+"', '"+lastname+"')";
             PreparedStatement statement = myConn.prepareStatement(query);
-            ResultSet resultSet = statement.executeQuery();
+            statement.execute();
         }
         catch(Exception e){
             JOptionPane.showMessageDialog(frame, "Error: " + e.getMessage());
