@@ -47,11 +47,22 @@ public class Operations {
         // and add one which will be the uid of the new account
         try{
             Connection myConn = MySQLConnection.getConnection();
-            String query = "INSERT INTO studentManagementSystem.users "
+            
+            int newUID;
+            
+            String query1 = "SELECT COUNT(*) from users;";
+            PreparedStatement statement1 = myConn.prepareStatement(query1);
+            ResultSet resultat =statement1.executeQuery();
+            if(resultat.next()){
+                newUID = resultat.getInt("COUNT(*)")+1;
+                String query2 = "INSERT INTO studentManagementSystem.users "
                     + "(uid, username, password, usertype, firstname, lastname)"
-                    + "VALUES (001, '"+username+"', '"+password+"', '"+usertype+"', '"+firstname+"', '"+lastname+"')";
-            PreparedStatement statement = myConn.prepareStatement(query);
-            statement.execute();
+                    + "VALUES ('"+newUID+"', '"+username+"', '"+password+"', '"+usertype+"', '"+firstname+"', '"+lastname+"')";
+                PreparedStatement statement2 = myConn.prepareStatement(query2);
+                statement2.execute();
+            }
+            
+           
         }
         catch(Exception e){
             JOptionPane.showMessageDialog(frame, "Error: " + e.getMessage());

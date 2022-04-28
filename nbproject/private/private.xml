@@ -4,6 +4,9 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/Users/derrelldowney/NetBeansProjects/SchoolManagementSystem/src/adminmenu/UserRegister.java</file>
+            <file>file:/Users/derrelldowney/NetBeansProjects/SchoolManagementSystem/src/loginwindow/LoginScreenDB.sql</file>
+            <file>file:/Users/derrelldowney/NetBeansProjects/SchoolManagementSystem/src/dashboard/AdminDashboard.java</file>
+            <file>file:/Users/derrelldowney/NetBeansProjects/SchoolManagementSystem/src/database/Operations.java</file>
             <file>file:/Users/derrelldowney/NetBeansProjects/SchoolManagementSystem/src/database/MySQLConnection.java</file>
             <file>file:/Users/derrelldowney/NetBeansProjects/SchoolManagementSystem/src/loginwindow/LoginForm.java</file>
         </group>

@@ -190,8 +190,19 @@ public class LoginForm extends javax.swing.JFrame {
             String usertypeStr = usertypeComboBox.getSelectedItem().toString();
             
             if(operations.isLogin(usernameStr, paswordStr, usertypeStr, this)){
-                new AdminDashboard().setVisible(rootPaneCheckingEnabled);
-                this.dispose();
+                // if the usertype is admin then open the admin dashboard
+                if(usertypeStr == "Admin"){
+                    new AdminDashboard().setVisible(rootPaneCheckingEnabled);
+                    this.dispose();
+                }
+                // if the usertype is teacher then open the teacher dashboard
+                else if(usertypeStr == "Teacher"){
+                    
+                }
+                // if the usertype is student then open the student dashboard
+                else if(usertypeStr == "Student"){
+                    
+                }
             }
             else{
                 JOptionPane.showMessageDialog(this, "Incorrect username/password");

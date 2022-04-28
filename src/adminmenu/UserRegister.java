@@ -234,13 +234,15 @@ public class UserRegister extends javax.swing.JFrame {
             String usertypeStr = usertypeComboBox.getSelectedItem().toString();
             
             operations.addAccount(firstnameStr, lastnameStr, usernameStr, paswordStr, usertypeStr, this);
-            if(operations.isLogin(usernameStr, paswordStr, usertypeStr, this)){
-                new AdminDashboard().setVisible(rootPaneCheckingEnabled);
-                this.dispose();
-            }
-            else{
-                JOptionPane.showMessageDialog(this, "Incorrect username/password");
-            }
+            JOptionPane.showMessageDialog(this, "Created new " + usertypeStr+ " account");
+            this.dispose();
+//            if(operations.isLogin(usernameStr, paswordStr, usertypeStr, this)){
+//                new AdminDashboard().setVisible(rootPaneCheckingEnabled);
+//                this.dispose();
+//            }
+//            else{
+//                JOptionPane.showMessageDialog(this, "Incorrect username/password");
+//            }
         }
         catch(Exception e){
             JOptionPane.showMessageDialog(this, "Error: " + e.getMessage());
