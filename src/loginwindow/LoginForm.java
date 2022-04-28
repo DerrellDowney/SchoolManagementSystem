@@ -5,7 +5,7 @@
 package loginwindow;
 
 import database.Operations;
-import dashboard.AdminDashboard;
+import adminmenu.AdminDashboard;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
@@ -56,7 +56,7 @@ public class LoginForm extends javax.swing.JFrame {
 
         usertypeLabel.setText("LOGIN AS");
 
-        usertypeComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Admin", "Student", "Teacher", " " }));
+        usertypeComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Admin", "Teacher", "Student", " ", " " }));
         usertypeComboBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 usertypeComboBoxActionPerformed(evt);
